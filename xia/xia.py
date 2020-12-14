@@ -2,11 +2,13 @@ import os
 import string
 from typing import Any, Union
 
+
 def random_string(
-        length:int = 64,
-        characters:str = string.ascii_letters + string.digits) -> str:
-    result_str = ''.join(random_choice(characters) for i in range(length))
+    length: int = 64, characters: str = string.ascii_letters + string.digits
+) -> str:
+    result_str = "".join(random_choice(characters) for i in range(length))
     return result_str
+
 
 def random_int() -> int:
     """
@@ -14,11 +16,13 @@ def random_int() -> int:
     """
     return bytes_to_int(os.urandom(8))
 
-def random_range(min:int, max:int) -> int:
+
+def random_range(min: int, max: int) -> int:
     """
     Select a random integer between two numbers
     """
     return (random_int() % ((max + 1) - min)) + min
+
 
 def bytes_to_int(bytes: bytes) -> int:
     """
@@ -28,6 +32,7 @@ def bytes_to_int(bytes: bytes) -> int:
     for b in bytes:
         result = result * 256 + int(b)
     return result
+
 
 def random_choice(options: Union[list, str]) -> Any:
     """
