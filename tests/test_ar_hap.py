@@ -6,14 +6,14 @@ import sys
 import os
 
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
-import xia
+import arhap
 import collections
 
 
 def test_random_string():
 
     """ test the string is the right length """
-    rnd_str = xia.random_string(length=32, characters="abc")
+    rnd_str = arhap.random_string(length=32, characters="abc")
     assert len(rnd_str) == 32
 
     """ test the string only has the recquested chars """
@@ -29,8 +29,8 @@ def test_random_string():
 
 def test_random_int():
 
-    rnd_1 = xia.random_int()
-    rnd_2 = xia.random_int()
+    rnd_1 = arhap.random_int()
+    rnd_2 = arhap.random_int()
 
     assert not rnd_1 == rnd_2
     assert isinstance(rnd_1, int)
@@ -40,7 +40,7 @@ def test_random_range():
 
     vals = []
     for i in range(5000):
-        vals.append(xia.random_range(10, 20))
+        vals.append(arhap.random_range(10, 20))
 
     assert min(vals) == 10, "test lower extreme of range"
     assert max(vals) == 20, "test upper extreme of range"
@@ -49,13 +49,13 @@ def test_random_range():
 def test_bytes_to_int():
 
     b1 = [0] * 8
-    assert xia.bytes_to_int(b1) == 0
+    assert arhap.bytes_to_int(b1) == 0
 
     b2 = [255] * 4
-    assert xia.bytes_to_int(b2) == (2 ** 32 - 1)
+    assert arhap.bytes_to_int(b2) == (2 ** 32 - 1)
 
     b3 = [255] * 8
-    assert xia.bytes_to_int(b3) == (2 ** 64 - 1)
+    assert arhap.bytes_to_int(b3) == (2 ** 64 - 1)
 
 
 def test_random_choice():
@@ -63,7 +63,7 @@ def test_random_choice():
     options = ["one", "two", "three"]
 
     for i in range(100):
-        choice = xia.random_choice(options)
+        choice = arhap.random_choice(options)
         assert choice in options
 
 
