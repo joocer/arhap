@@ -9,7 +9,7 @@ generator, [os.urandom](https://docs.python.org/3/library/os.html#os.urandom).
 
 Return a string of length _length_ of random characters
 ~~~python
-arhap.random_string(length=64, characters=a-zA-Z0-9)
+arhap.random_string(length=64, characters='a-zA-Z0-9')
 ~~~
 
 Return a random 64bit integer
